@@ -1,0 +1,1 @@
+(()=>{"use strict";document.getElementById("root").appendChild(function(){const e=document.createElement("div");return e.textContent="Hello Wolrd",e.className="",e}())})();
