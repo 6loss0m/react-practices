@@ -1,4 +1,4 @@
-package com.example.demo.vo;
+package com.poscodx.kanbanboard.vo;
 
 import lombok.Getter;
 import lombok.Setter;

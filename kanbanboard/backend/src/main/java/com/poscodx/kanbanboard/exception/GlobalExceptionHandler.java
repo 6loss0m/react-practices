@@ -1,4 +1,4 @@
-package com.example.demo.exception;
+package com.poscodx.kanbanboard.exception;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.example.demo.dto.JsonResult;
+import com.poscodx.kanbanboard.dto.JsonResult;
 
 import lombok.extern.slf4j.Slf4j;
 

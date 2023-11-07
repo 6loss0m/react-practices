@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.poscodx.kanbanboard;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.jdbc.ScriptRunner;
@@ -11,10 +11,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class Kanbanboard07Application {
+public class KanbanboardApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Kanbanboard07Application.class, args);
+		SpringApplication.run(KanbanboardApplication.class, args);
 	}
 	
 	@Bean

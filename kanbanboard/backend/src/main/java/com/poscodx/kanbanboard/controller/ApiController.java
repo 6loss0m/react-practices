@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.poscodx.kanbanboard.controller;
 
 import java.util.HashMap;
 
@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.dto.JsonResult;
-import com.example.demo.repository.CardRepository;
-import com.example.demo.repository.TaskRepository;
-import com.example.demo.vo.TaskVo;
+import com.poscodx.kanbanboard.dto.JsonResult;
+import com.poscodx.kanbanboard.repository.CardRepository;
+import com.poscodx.kanbanboard.repository.TaskRepository;
+import com.poscodx.kanbanboard.vo.TaskVo;
 
 @RestController
 @RequestMapping("/api")

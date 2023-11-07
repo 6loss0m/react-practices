@@ -1,5 +1,7 @@
 # active spring boot profile
 spring:
+   application:
+      name: kanbanboard
    profiles:
       active: development
 
