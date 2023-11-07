@@ -12,7 +12,6 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 
 import com.poscodx.emaillist.dto.JsonResult;
 
-import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
