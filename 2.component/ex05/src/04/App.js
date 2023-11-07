@@ -1,32 +1,45 @@
-import React, { useState, useEffect } from "react";
-import "./assets/scss/App.scss";
-import Clock from "./Clock";
+import React, {useState, useEffect} from 'react';
+import './assets/scss/App.scss'
+import Clock from './Clock';
 
 export default function App() {
-  const [ticks, setTicks] = useState(0);
-  const [now, setNow] = useState(new Date());
+    const getCurrentClockTime = () => {
+        const now = new Date();
+        const hours = now.getHours();
 
-  const hours = now.getHours();
-  const minutes = now.getMinutes();
-  const seconds = now.getSeconds();
+        return {
+            hours: ('0' + (hours > 12 ? hours - 12 : hours)).slice(-2),
+            minutes: ('0' + now.getMinutes()).slice(-2),
+            seconds: ('0' + now.getSeconds()).slice(-2),
+            session: hours > 12 ? 'pm': 'am'
+        }
+    }
 
-  useEffect(() => {
-    setInterval(() => {
-      /* 시간 */
-      setNow(new Date());
+    const [currentTime, setCurrentTime] = useState(getCurrentClockTime());
+    const [ticks, setTicks] = useState(0);
 
-      setTicks((prevTicks) => prevTicks + 1);
-    }, 1000);
-  }, []);   // 의존성 배열
-// 처음 render할 때 useEffect
-  return (
-    <>
-      <Clock
-        message={`ex04: ticks ${ticks}`}
-        hours={hours}
-        minutes={minutes}
-        seconds={seconds}
-      />
-    </>
-  );
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentTime(getCurrentClockTime());
+            setTicks(x => x+1);
+        }, 1000);
+
+        return () => {
+            clearInterval(intervalId);
+        }
+    }, []);
+
+    return(
+        <>
+            {
+                ticks % 10 === 0 ?
+                null :
+                <Clock
+                    message={`ex05-Component LifeCycle: ${ticks}`}
+                    hours={currentTime.hours}
+                    minutes={currentTime.minutes}
+                    seconds={currentTime.seconds}/>
+            }
+        </>
+    );    
 }
